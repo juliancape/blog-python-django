@@ -1,21 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<header class="row bg-black">
+    <div class="col-md-6">
+        <img src="{% static 'portafolio/me.jpeg' %}" alt="">
+    </div>
+
+    <div class="col-md-6 my-auto " >
+        <h1>julian cardenask</h1>
+        <h3>I'm Django Fullstack dev</h3>
+        <p>Stay up-to-date on the development of Bootstrap and reach out to the community with these helpful resources.
+
+            Read and subscribe to The Official Bootstrap Blog.
+            Ask and explore our GitHub Discussions.
+            Chat with fellow Bootstrappers in IRC. On the irc.libera.chat server, in the #bootstrap channel.
+            Implementation help may be found at Stack Overflow (tagged bootstrap-5).
+            Developers should use the keyword bootstrap on packages that modify or add to the functionality of Bootstrap when distributing through npm or similar delivery mechanisms for maximum discoverability.
+            You can also follow @getbootstrap on Twitter for the latest gossip and awesome music videos.</p>
+            <a href="{% static 'portafolio/español-cv-python-backend.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
+    </div>
+</header>
+    
+<div class="row my-4 text-center">
+    <h3>My projects</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, aliquam?</p>
+        
     {% for p in projects %}
-        <h2>{{p.tittle}}</h2>
-        <h2>{{p.description}}</h2>
-        <img src="{{p.image.url}}" alt="{{p.tittle}}"> 
-        {% if p.url %}
-            <a href="{{p.url}}">{{p.url}}</a>
-        {% endif %}
+        <div class="col-md-4 p-4 card-project">
+            <div class="card bg-black">
+                <img src="{{p.image.url}}" alt="{{p.tittle}}" class="card-img-top"> 
+                <div class="card-body">
+                    <h2>{{p.tittle}}</h2>
+                    <h2>{{p.description}}</h2>
+                     
+                    {% if p.url %}
+                        <a href="{{p.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{p.url}}</a>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
     {% endfor %}
 
-
-</body>
-</html>
+    {% endblock %}
+</div>
