@@ -1,49 +1,230 @@
-{% extends 'layout.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    {% load static %}
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+  </head>
 
-{% block content %}
-{% load static %}
-
-
-<header class="row bg-black">
-    <div class="col-md-6">
-        <img src="{% static 'portafolio/me.jpeg' %}" alt="">
-    </div>
-
-    <div class="col-md-6 my-auto " >
-        <h1>julian cardenask</h1>
-        <h3>I'm Django Fullstack dev</h3>
-        <p>Stay up-to-date on the development of Bootstrap and reach out to the community with these helpful resources.
-
-            Read and subscribe to The Official Bootstrap Blog.
-            Ask and explore our GitHub Discussions.
-            Chat with fellow Bootstrappers in IRC. On the irc.libera.chat server, in the #bootstrap channel.
-            Implementation help may be found at Stack Overflow (tagged bootstrap-5).
-            Developers should use the keyword bootstrap on packages that modify or add to the functionality of Bootstrap when distributing through npm or similar delivery mechanisms for maximum discoverability.
-            You can also follow @getbootstrap on Twitter for the latest gossip and awesome music videos.</p>
-            <a href="{% static 'portafolio/español-cv-python-backend.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3">Download CV</a>
-    </div>
-</header>
+  <body style="background: #2a2e32;">
     
-<div class="row my-4 text-center">
-    <h3>My projects</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, aliquam?</p>
+<nav id="header" class="navbar navbar-expand-lg  bg-dark" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Julian Cardenas Peñuela</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav justify-content-start col">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          
+        </ul>
+        <div class="d-flex justify-content-end">
+          <a class="navbar-brand " href="#">
+            <img class="img-thumbnail  img-fluid" src="{% static 'portafolio/git.png' %}" alt="github logo">
+          </a>
+          <a class="navbar-brand " href="#">
+            <img class="img-thumbnail " src="{% static 'portafolio/in.png' %}"alt="linkedin logo">
+          </a>
+        </div>
         
-    {% for p in projects %}
-        <div class="col-md-4 p-4 card-project">
-            <div class="card bg-black">
-                <img src="{{p.image.url}}" alt="{{p.tittle}}" class="card-img-top"> 
-                <div class="card-body">
-                    <h2>{{p.tittle}}</h2>
-                    <h2>{{p.description}}</h2>
-                     
-                    {% if p.url %}
-                        <a href="{{p.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{p.url}}</a>
-                    {% endif %}
+      </div>
+    </div>
+</nav>
 
+
+<header class="row bg-black" >
+  <div class="col-md-6">
+      <img src="{% static 'portafolio/me.jpeg' %}" alt="">
+  </div>
+
+  <div class="col-md-5 my-auto" id="mydescription" >
+      <h1>Desarollador Backend Junior en Python </h1>
+      <h3>Hola, mi nombre es Julián Cárdenas.</h3>
+      <p>Estudiante de Ciencias de la Computacion e Inteligencia Artificial, busco oportunidad para adquirir experiencia en como 
+        desarollador Junior Python Backend, especificamente en el framework <b>Django</b>.<br>
+        Busco potenciar mis habilidades de trabajo en equipo, cooperando con todos y ayudando de la mejor manera posible, 
+        siempre buscando fortalecer conocimientos, aprender y enseñar.</p>
+        <a class="btn btn-primary btn-sm" href="{% static 'portafolio/español-cv-python-backend.pdf' %}" target="_blank">Download CV</a>
+  </div>
+</header>
+
+
+
+<div id="conocimientos" class="navbar navbar-expand-lg  bg-dark">
+<div class="row my-4 m-4 text-center">
+  <h2>Conocimientos</h2>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">Python</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/python.jpg' %}" class="rounded mx-auto d-block" alt="python logo">
+        </div>
+        
+        <p class="card-text">Amplios conocimientos y experiencia desarollando en el lenguaje de programacion python.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 ">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">Django</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/django.png' %}" class="rounded mx-auto d-block" alt="django logo">
+        </div>
+        
+        <p class="card-text">Experiencia en el desarollo web utilizando el framework <br>Django.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 ">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">SQL</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/sql.png' %}" class="rounded mx-auto d-block" alt="sql logo">
+        </div>
+        
+        <p class="card-text">Experiencia en manejo de datos con el <b>ORM de Django</b> y conocimientos
+          en diseño SQL.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 ">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">Bootstrap</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/bootstrap.png' %}" class="rounded mx-auto d-block" alt="bootstrap logo">
+        </div>
+        
+        <p class="card-text">Experiencia en front-end utilizando el framework Bootstrap y sus <br>componentes.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 my-4">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">Git</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/gitlogo.png' %}" class="rounded mx-auto d-block" alt="git logo">
+        </div>
+    
+        <p class="card-text">Conocimiento en Git y GitHub para el control de versiones y gestion de <br>codigo.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3 my-4">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">Java</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/java.png' %}" class="rounded mx-auto d-block" alt="java logo">
+        </div>
+    
+        <p class="card-text">Amplia experiencia desarollado en Java, conocimientos en POO y patrones de diseño.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 my-4">
+    <div class="card">
+      <div class="card-body" >
+        <h5 class="card-title">CSS-HTML</h5>
+        <div class="row">
+          <img src="{% static 'portafolio/css.jpg' %}" class="rounded mx-auto d-block" alt="css logo">
+        </div>
+        
+        <p class="card-text">Experiencia front-end CSS-HTML para dar estilos y estructura.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+ 
+
+<div class="row my-4 text-center " id="projects" style="color: white;">
+    
+    <h3>Proyectos realizados</h3>
+  
+      
+  {% for p in projects %}
+      <div class="col-md-4  p-3 card-project">
+          <div class="card bg-dark">
+            <div class="card-body" style="color: white;">
+                <h1><b>{{p.tittle}}</b></h1>
+            </div>
+              <img src="{{p.image.url}}" alt="{{p.tittle}}" class="card-img-top"> 
+              <div class="card-body" style="color: white;">
+                  
+                  <h3>{{p.description}}</h3>
+                   
+                  {% if p.url %}
+                      <a href="{{p.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{p.url}}</a>
+                  {% endif %}
+
+              </div>
+          </div>
+      </div>
+    {%endfor%}
+</div>
+
+
+    <!-- FOOTER -->
+    <footer class="w-100 py-4 flex-shrink-0 bg-dark">
+        <div class="container py-4">
+            <div class="row gy-4 gx-5">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="h1 text-white">Julián Cárdenas</h5>
+                    <p class="small text-muted">Desarollador Junior Backend con Python</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Links</h5>
+                       <ul class="list-unstyled text-muted">
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Descargar CV</h5>
+                    <a class="btn btn-primary btn-sm" href="{% static 'portafolio/español-cv-python-backend.pdf' %}" target="_blank">Curriculum</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <form action="#">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    {% endfor %}
-
-    {% endblock %}
-</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

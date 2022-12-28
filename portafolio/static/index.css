@@ -1,0 +1,23 @@
+#footer {
+    background: #289d9c;
+}
+#footer a {
+    color: white;
+}
+
+#header a{
+    color: whitesmoke;
+}
+
+#header img {
+    width: 40px;
+    display: inline-block;
+
+}
+#mydescription {
+    color: white;
+}
+
+#conocimientos h2 {
+    color: white;
+}
