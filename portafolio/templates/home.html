@@ -21,10 +21,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav justify-content-start col">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+            <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="btn btn-primary " href="{% static 'portafolio/español-cv-python-backend.pdf' %}" target="_blank">Curriculum</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
@@ -32,10 +33,10 @@
           
         </ul>
         <div class="d-flex justify-content-end">
-          <a class="navbar-brand " href="#">
+          <a class="navbar-brand " href="https://github.com/juliancape">
             <img class="img-thumbnail  img-fluid" src="{% static 'portafolio/git.png' %}" alt="github logo">
           </a>
-          <a class="navbar-brand " href="#">
+          <a class="navbar-brand " href="https://www.linkedin.com/in/julian-cardenas-pe%C3%B1uela-dev/">
             <img class="img-thumbnail " src="{% static 'portafolio/in.png' %}"alt="linkedin logo">
           </a>
         </div>
@@ -53,7 +54,7 @@
   <div class="col-md-5 my-auto" id="mydescription" >
       <h1>Desarollador Backend Junior en Python </h1>
       <h3>Hola, mi nombre es Julián Cárdenas.</h3>
-      <p>Estudiante de Ciencias de la Computacion e Inteligencia Artificial, busco oportunidad para adquirir experiencia en como 
+      <p>Estudiante de Ciencias de la Computacion e Inteligencia Artificial, busco oportunidad para adquirir experiencia como 
         desarollador Junior Python Backend, especificamente en el framework <b>Django</b>.<br>
         Busco potenciar mis habilidades de trabajo en equipo, cooperando con todos y ayudando de la mejor manera posible, 
         siempre buscando fortalecer conocimientos, aprender y enseñar.</p>
@@ -106,7 +107,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-3 ">
+  <div class="col-sm-3  my-auto">
     <div class="card">
       <div class="card-body" >
         <h5 class="card-title">Bootstrap</h5>
@@ -119,7 +120,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-3 my-4">
+  <div class="col-sm-3 my-auto">
     <div class="card">
       <div class="card-body" >
         <h5 class="card-title">Git</h5>
@@ -133,7 +134,7 @@
     </div>
   </div>
 
-  <div class="col-sm-3 my-4">
+  <div class="col-sm-3 my-auto">
     <div class="card">
       <div class="card-body" >
         <h5 class="card-title">Java</h5>
@@ -171,7 +172,7 @@
   
       
   {% for p in projects %}
-      <div class="col-md-4  p-3 card-project">
+      <div class="col-md-4  p-3 card-project" >
           <div class="card bg-dark">
             <div class="card-body" style="color: white;">
                 <h1><b>{{p.tittle}}</b></h1>
@@ -203,8 +204,8 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3">Links</h5>
                        <ul class="list-unstyled text-muted">
-                        <li><a href="#">Github</a></li>
-                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="https://github.com/juliancape">Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/julian-cardenas-pe%C3%B1uela-dev/">Linkedin</a></li>
                         
                     </ul>
                 </div>
